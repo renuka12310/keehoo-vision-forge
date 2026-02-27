@@ -48,7 +48,7 @@ const VentureCard = ({
       >
         <div
           onClick={() => setFlipped(!flipped)}
-          className="relative w-full min-h-[280px] cursor-pointer"
+          className="relative w-full h-full min-h-[280px] cursor-pointer"
           style={{
             transformStyle: "preserve-3d",
             transition: "transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1)",
