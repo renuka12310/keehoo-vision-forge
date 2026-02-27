@@ -216,7 +216,7 @@ const HeroSection = () => {
                     {founder.name}
                   </h3>
                   <p className="text-sm font-body font-medium text-teal mb-2">{founder.role}</p>
-                  <p className="text-xs font-body text-muted-foreground leading-relaxed">
+                  <p className="text-xs font-body text-card-foreground/70 leading-relaxed">
                     {founder.expertise}
                   </p>
                 </div>
