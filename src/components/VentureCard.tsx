@@ -117,7 +117,7 @@ const VentureCard = ({
               </div>
 
               <div className="mt-3">
-                <h3 className="font-display text-xl font-semibold text-foreground mb-1">
+                <h3 className="font-display text-xl font-semibold text-charcoal mb-1">
                   {title}
                 </h3>
                 {subtitle && (
