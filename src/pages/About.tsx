@@ -249,7 +249,7 @@ const About = () => {
 
 
       {/* Footer / Contact */}
-      <footer className="border-t border-border py-14 bg-secondary/20">
+      <footer id="contact" className="border-t border-border py-14 bg-secondary/20">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Platform */}
