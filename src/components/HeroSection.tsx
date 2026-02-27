@@ -1,0 +1,192 @@
+import { Button } from "@/components/ui/button";
+import VentureCard from "@/components/VentureCard";
+import {
+  Building2,
+  Landmark,
+  BrainCircuit,
+  ScanLine,
+  HeartPulse,
+} from "lucide-react";
+import office1 from "@/assets/office-1.jpeg";
+import office2 from "@/assets/office-2.jpeg";
+import office3 from "@/assets/office-3.jpeg";
+import teamPhoto from "@/assets/team-photo.jpeg";
+
+const ventures = [
+  {
+    icon: <Building2 className="w-6 h-6" />,
+    title: "Keehoo Technology Group",
+    description:
+      "A long-term technology holding company building mission-driven product ventures designed for scale, governance, and generational value creation.",
+    tagline: "Strategic. Structured. Scalable.",
+    isMain: true,
+    delay: 200,
+    href: "/keehoo",
+  },
+  {
+    icon: <Landmark className="w-6 h-6" />,
+    title: "DigiDevalaya",
+    subtitle: "Digital Temple Infrastructure Platform",
+    description:
+      "A FaithTech ecosystem enabling temples and spiritual institutions to digitize operations, manage communities, offerings, events, and engagement through modern technology infrastructure.",
+    tagline: "Institutional-grade Faith Infrastructure.",
+    position: "FaithTech",
+    href: "/digidevalaya",
+    delay: 350,
+    launchDate: new Date("2026-03-19T00:00:00"),
+    timerPosition: "top-right" as const,
+  },
+  {
+    icon: <BrainCircuit className="w-6 h-6" />,
+    title: "AI Kruise",
+    subtitle: "AI Planner for Leaders",
+    description:
+      "An intelligent productivity ecosystem that helps leaders manage processes, teams, goals, and operational workflows using AI-driven planning and execution intelligence.",
+    tagline: "Enterprise AI for Human Leadership.",
+    position: "Productivity Intelligence",
+    href: "/ai-kruise",
+    delay: 500,
+    launchDate: new Date("2026-04-19T00:00:00"),
+  },
+  {
+    icon: <ScanLine className="w-6 h-6" />,
+    title: "Stock & Asset Intelligence",
+    subtitle: "AI-Powered MSME Infrastructure",
+    description:
+      "A computer-vision enabled stock and asset management system designed for MSMEs, integrating edge devices to monitor inventory, assets, and operational movement in real time.",
+    tagline: "Edge AI for Enterprise Efficiency.",
+    position: "Enterprise Asset Intelligence",
+    href: "/stock-asset",
+    delay: 650,
+    launchDate: new Date("2026-04-19T00:00:00"),
+  },
+  {
+    icon: <HeartPulse className="w-6 h-6" />,
+    title: "DigiCounselar",
+    subtitle: "Digital Psychological Care Platform",
+    description:
+      "A HealthTech platform focused on accessible psychological support, structured healing journeys, and technology-enabled counseling infrastructure.",
+    tagline: "Digital Psychology for Modern Well-being.",
+    position: "HealthTech",
+    href: "/digicounselar",
+    delay: 800,
+    launchDate: new Date("2026-05-19T00:00:00"),
+  },
+];
+
+const HeroSection = () => {
+  return (
+    <section className="relative min-h-screen bg-background overflow-hidden">
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      <div className="relative container mx-auto px-6 pt-24 pb-20 lg:pt-32 lg:pb-28">
+        {/* Header */}
+        <div className="max-w-4xl mx-auto text-center mb-20 opacity-0 animate-fade-in-up">
+          <p className="text-sm font-body font-semibold uppercase tracking-[0.2em] text-teal mb-6">
+            Keehoo Pvt Ltd
+          </p>
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-[3.4rem] font-600 leading-tight text-foreground mb-8">
+            Building Intelligent Systems for Faith, Enterprise, and Human
+            Potential.
+          </h1>
+          <p className="text-base lg:text-lg font-body text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-10">
+            Keehoo Pvt Ltd is a technology group building scalable product
+            ventures across FaithTech, Productivity Intelligence, Enterprise
+            Automation, and Digital Psychology.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="hero" size="lg" className="text-base px-8 py-6">
+              Explore Our Ventures
+            </Button>
+            <Button
+              variant="heroOutline"
+              size="lg"
+              className="text-base px-8 py-6"
+            >
+              Investor Relations
+            </Button>
+          </div>
+        </div>
+
+        {/* Venture Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {/* Keehoo main card - spans full width on first row at lg */}
+          <div className="lg:col-span-1 lg:row-span-2">
+            <div className="h-full">
+              <VentureCard {...ventures[0]} />
+            </div>
+          </div>
+          {ventures.slice(1).map((venture, i) => (
+            <VentureCard key={venture.title} {...venture} />
+          ))}
+        </div>
+
+        {/* Facility & Team Section */}
+        <div className="max-w-6xl mx-auto mt-24 opacity-0 animate-fade-in-up" style={{ animationDelay: '900ms' }}>
+          <div className="text-center mb-12">
+            <p className="text-sm font-body font-semibold uppercase tracking-[0.2em] text-teal mb-4">
+              Our Foundation
+            </p>
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-600 text-foreground mb-4">
+              4+ Years of Building Industry-Leading Products
+            </h2>
+            <p className="text-base lg:text-lg font-body text-muted-foreground max-w-2xl mx-auto">
+              A strong technology facility powered by a high-performance team with deep expertise 
+              in scalable product development, AI systems, and enterprise-grade infrastructure.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="col-span-2 lg:col-span-2 rounded-2xl overflow-hidden aspect-[16/10]">
+              <img src={office1} alt="Keehoo technology workspace with team collaborating" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-square">
+              <img src={office2} alt="Engineering team at work" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-square">
+              <img src={office3} alt="Modern office lounge area" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+
+          <div className="mt-4 rounded-2xl overflow-hidden aspect-[21/9]">
+            <img src={teamPhoto} alt="Keehoo founding team at Deshpande Startups Hubli" className="w-full h-full object-cover object-top" loading="lazy" />
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+            {[
+              { value: "4+", label: "Years of Journey" },
+              { value: "5", label: "Product Ventures" },
+              { value: "20+", label: "Technology Experts" },
+              { value: "3", label: "Industry Verticals" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="font-display text-3xl lg:text-4xl font-700 text-teal">{stat.value}</p>
+                <p className="font-body text-sm text-muted-foreground mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom fade to white */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32"
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent, hsl(var(--ivory)))",
+        }}
+      />
+    </section>
+  );
+};
+
+export default HeroSection;
