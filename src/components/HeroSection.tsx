@@ -111,13 +111,7 @@ const HeroSection = () => {
 
         {/* Venture Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {/* Keehoo main card - spans full width on first row at lg */}
-          <div className="lg:col-span-1 lg:row-span-2">
-            <div className="h-full">
-              <VentureCard {...ventures[0]} />
-            </div>
-          </div>
-          {ventures.slice(1).map((venture, i) => (
+          {ventures.map((venture) => (
             <VentureCard key={venture.title} {...venture} />
           ))}
         </div>
@@ -132,8 +126,8 @@ const HeroSection = () => {
               4+ Years of Building Industry-Leading Products
             </h2>
             <p className="text-base lg:text-lg font-body text-muted-foreground max-w-2xl mx-auto">
-              A strong technology facility powered by a high-performance team with deep expertise 
-              in scalable product development, AI systems, and enterprise-grade infrastructure.
+              A strong product building team with a factory model — delivering products 
+              with quality, speed, governance, scalability, cost-effectiveness, and performance.
             </p>
           </div>
 
@@ -158,7 +152,7 @@ const HeroSection = () => {
             {[
               { value: "4+", label: "Years of Journey" },
               { value: "5", label: "Product Ventures" },
-              { value: "20+", label: "Technology Experts" },
+              { value: "50+", label: "Technology Experts" },
               { value: "3", label: "Industry Verticals" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
@@ -166,6 +160,62 @@ const HeroSection = () => {
                 <p className="font-body text-sm text-muted-foreground mt-1">{stat.label}</p>
               </div>
             ))}
+          </div>
+
+          {/* Founders */}
+          <div className="mt-20">
+            <div className="text-center mb-10">
+              <p className="text-sm font-body font-semibold uppercase tracking-[0.2em] text-teal mb-4">
+                Leadership
+              </p>
+              <h2 className="font-display text-2xl sm:text-3xl font-600 text-foreground">
+                The Minds Behind Keehoo
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  name: "Mr. Ramesh Kulkarni",
+                  role: "Founder & Chairman",
+                  expertise: "20 years of Engineering & Tech Leadership",
+                  initials: "RK",
+                },
+                {
+                  name: "Mrs. Sapna Sardesai",
+                  role: "Co-Founder & COO",
+                  expertise: "20 years of Finance & Marketing Expertise",
+                  initials: "SS",
+                },
+                {
+                  name: "Mr. Sreevatsa",
+                  role: "Co-Founder & CEO",
+                  expertise: "19 years of Business, Tech & Security",
+                  initials: "SV",
+                },
+                {
+                  name: "Mr. Gopal Kommuri",
+                  role: "Chief Business Officer",
+                  expertise: "21 years of Marketing & Sales",
+                  initials: "GK",
+                },
+              ].map((founder) => (
+                <div
+                  key={founder.name}
+                  className="bg-card rounded-lg p-6 card-shadow text-center hover:card-shadow-hover transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="w-16 h-16 rounded-full bg-teal/10 text-teal flex items-center justify-center mx-auto mb-4 text-lg font-display font-semibold">
+                    {founder.initials}
+                  </div>
+                  <h3 className="font-display text-base font-semibold text-card-foreground mb-1">
+                    {founder.name}
+                  </h3>
+                  <p className="text-sm font-body font-medium text-teal mb-2">{founder.role}</p>
+                  <p className="text-xs font-body text-muted-foreground leading-relaxed">
+                    {founder.expertise}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
