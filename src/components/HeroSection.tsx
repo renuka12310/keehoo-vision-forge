@@ -94,8 +94,8 @@ const HeroSection = () => {
             Keehoo Pvt Ltd
           </p>
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-[3.4rem] font-600 leading-tight text-foreground mb-8">
-            Building Intelligent Systems for Faith, Enterprise, and Human
-            Potential.
+            Powering the Future of Faith, Enterprise &amp; Human Well-being
+            Through Technology.
           </h1>
           <p className="text-base lg:text-lg font-body text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-10">
             Keehoo Pvt Ltd is a technology group building scalable product
@@ -105,13 +105,6 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" className="text-base px-8 py-6">
               Explore Our Ventures
-            </Button>
-            <Button
-              variant="heroOutline"
-              size="lg"
-              className="text-base px-8 py-6"
-            >
-              Investor Relations
             </Button>
           </div>
         </div>
