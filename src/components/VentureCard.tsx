@@ -39,7 +39,7 @@ const VentureCard = ({
   if (isMysteryCard) {
     return (
       <div
-        className="opacity-0 animate-fade-in-up"
+        className="opacity-0 animate-fade-in-up h-full"
         style={{
           animationDelay: `${delay}ms`,
           animationFillMode: "forwards",
@@ -48,7 +48,7 @@ const VentureCard = ({
       >
         <div
           onClick={() => setFlipped(!flipped)}
-          className="relative w-full h-full min-h-[280px] cursor-pointer"
+          className="relative w-full h-full min-h-[340px] cursor-pointer"
           style={{
             transformStyle: "preserve-3d",
             transition: "transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1)",
@@ -165,7 +165,7 @@ const VentureCard = ({
   // Normal card (Keehoo main + DigiDevalaya with top-right timer)
   const cardContent = (
     <div
-      className={`group relative bg-card rounded-lg p-8 card-shadow hover:card-shadow-hover transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up cursor-pointer overflow-hidden flex flex-col justify-between`}
+      className={`group relative h-full min-h-[340px] bg-card rounded-lg p-8 card-shadow hover:card-shadow-hover transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up cursor-pointer overflow-hidden flex flex-col justify-between`}
       style={{ animationDelay: `${delay}ms`, animationFillMode: "forwards" }}
     >
       {/* Teal accent line */}
