@@ -11,6 +11,10 @@ import office1 from "@/assets/office-1.jpeg";
 import office2 from "@/assets/office-2.jpeg";
 import office3 from "@/assets/office-3.jpeg";
 import teamPhoto from "@/assets/team-photo.jpeg";
+import founderRamesh from "@/assets/founder-ramesh.png";
+import founderSapna from "@/assets/founder-sapna.jpeg";
+import founderSreevatsa from "@/assets/founder-sreevatsa.png";
+import founderGopal from "@/assets/founder-gopal.png";
 
 const ventures = [
   {
@@ -178,33 +182,33 @@ const HeroSection = () => {
                   name: "Mr. Ramesh Kulkarni",
                   role: "Founder & Chairman",
                   expertise: "20 years of Engineering & Tech Leadership",
-                  initials: "RK",
+                  photo: founderRamesh,
                 },
                 {
                   name: "Mrs. Sapna Sardesai",
                   role: "Co-Founder & COO",
                   expertise: "20 years of Finance & Marketing Expertise",
-                  initials: "SS",
+                  photo: founderSapna,
                 },
                 {
                   name: "Mr. Sreevatsa",
                   role: "Co-Founder & CEO",
                   expertise: "19 years of Business, Tech & Security",
-                  initials: "SV",
+                  photo: founderSreevatsa,
                 },
                 {
                   name: "Mr. Gopal Kommuri",
                   role: "Chief Business Officer",
                   expertise: "21 years of Marketing & Sales",
-                  initials: "GK",
+                  photo: founderGopal,
                 },
               ].map((founder) => (
                 <div
                   key={founder.name}
                   className="bg-card rounded-lg p-6 card-shadow text-center hover:card-shadow-hover transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="w-16 h-16 rounded-full bg-teal/10 text-teal flex items-center justify-center mx-auto mb-4 text-lg font-display font-semibold">
-                    {founder.initials}
+                  <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 ring-2 ring-teal/20">
+                    <img src={founder.photo} alt={founder.name} className="w-full h-full object-cover object-top" loading="lazy" />
                   </div>
                   <h3 className="font-display text-base font-semibold text-card-foreground mb-1">
                     {founder.name}
