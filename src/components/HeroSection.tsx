@@ -116,7 +116,7 @@ const HeroSection = () => {
         {/* Venture Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {ventures.map((venture, index) => (
-            <div key={venture.title} className={index === 3 ? "lg:col-start-2" : ""}>
+            <div key={venture.title} className={`h-full ${index === 3 ? "lg:col-start-2" : ""}`}>
               <VentureCard {...venture} />
             </div>
           ))}
