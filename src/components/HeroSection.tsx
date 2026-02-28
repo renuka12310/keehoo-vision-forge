@@ -98,7 +98,7 @@ const HeroSection = () => {
             Keehoo Pvt Ltd
           </p>
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-[3.4rem] font-600 leading-tight text-foreground mb-8">
-            Powering the Future of Faith, Enterprise &amp; Human Well-being
+            Powering the Future of Enterprise, Faith &amp; Human Well-being
             Through Technology.
           </h1>
           <p className="text-base lg:text-lg font-body text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-10">
@@ -181,6 +181,12 @@ const HeroSection = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
+                  name: "Mr. Sreevatsa",
+                  role: "Co-Founder & CEO",
+                  expertise: "19 years of Business, Tech & Security",
+                  photo: founderSreevatsa,
+                },
+                {
                   name: "Mr. Ramesh Kulkarni",
                   role: "Founder & Chairman",
                   expertise: "20 years of Engineering & Tech Leadership",
@@ -191,12 +197,6 @@ const HeroSection = () => {
                   role: "Co-Founder & COO",
                   expertise: "20 years of Finance & Marketing Expertise",
                   photo: founderSapna,
-                },
-                {
-                  name: "Mr. Sreevatsa",
-                  role: "Co-Founder & CEO",
-                  expertise: "19 years of Business, Tech & Security",
-                  photo: founderSreevatsa,
                 },
                 {
                   name: "Mr. Gopal Kommuri",
