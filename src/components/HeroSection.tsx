@@ -103,8 +103,8 @@ const HeroSection = () => {
           </h1>
           <p className="text-base lg:text-lg font-body text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-10">
             Keehoo Pvt Ltd is a technology group building scalable product
-            ventures across FaithTech, Productivity Intelligence, Enterprise
-            Automation, and Digital Psychology.
+            ventures across FaithTech, Enterprise Automation and Intelligence,
+            and Digital Psychology.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" className="text-base px-8 py-6">
@@ -156,7 +156,7 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
             {[
-              { value: "4+", label: "Years of Journey" },
+              { value: "5+", label: "Years of Journey" },
               { value: "5", label: "Product Ventures" },
               { value: "50+", label: "Technology Experts" },
               { value: "3", label: "Industry Verticals" },
