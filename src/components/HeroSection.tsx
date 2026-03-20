@@ -143,9 +143,7 @@ const HeroSection = () => {
 
         {/* Keehoo Main Card */}
         <div className="max-w-6xl mx-auto mb-10">
-          <div className="max-w-md">
-            <VentureCard {...mainVenture} />
-          </div>
+          <VentureCard {...mainVenture} />
         </div>
 
         {/* Categorised Venture Cards */}

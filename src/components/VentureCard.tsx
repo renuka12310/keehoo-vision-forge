@@ -165,7 +165,7 @@ const VentureCard = ({
   // Normal card (Keehoo main + DigiDevalaya with top-right timer)
   const cardContent = (
     <div
-      className={`group relative h-full min-h-[340px] bg-card rounded-lg p-8 card-shadow hover:card-shadow-hover transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up cursor-pointer overflow-hidden flex flex-col justify-between`}
+      className={`group relative h-full ${isMain ? 'min-h-[200px]' : 'min-h-[340px]'} bg-card rounded-lg ${isMain ? 'p-10' : 'p-8'} card-shadow hover:card-shadow-hover transition-all duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up cursor-pointer overflow-hidden flex ${isMain ? 'flex-row items-center gap-10' : 'flex-col justify-between'}`}
       style={{ animationDelay: `${delay}ms`, animationFillMode: "forwards" }}
     >
       {/* Teal accent line */}
@@ -178,26 +178,26 @@ const VentureCard = ({
         }}
       />
 
-      {/* Top row: icon + timer */}
-      <div className="mt-4 flex items-start justify-between">
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-teal/10 text-teal group-hover:bg-teal/20 group-hover:scale-110 transition-all duration-300">
+      {/* Icon */}
+      <div className={`${isMain ? '' : 'mt-4'} flex items-start justify-between ${isMain ? 'flex-shrink-0' : ''}`}>
+        <div className={`inline-flex items-center justify-center ${isMain ? 'w-16 h-16' : 'w-12 h-12'} rounded-lg bg-teal/10 text-teal group-hover:bg-teal/20 group-hover:scale-110 transition-all duration-300`}>
           {icon}
         </div>
-        {hasTimer && timerPosition === "top-right" && (
+        {!isMain && hasTimer && timerPosition === "top-right" && (
           <div className="flex-shrink-0">
             <CountdownTimer targetDate={launchDate} label="to launch" />
           </div>
         )}
       </div>
 
-      <div className="mt-3">
-        <h3 className="font-display text-xl font-semibold text-charcoal mb-1 group-hover:text-teal transition-colors duration-300">
+      <div className={`${isMain ? 'flex-1' : 'mt-3'}`}>
+        <h3 className={`font-display ${isMain ? 'text-2xl lg:text-3xl' : 'text-xl'} font-semibold text-charcoal mb-1 group-hover:text-teal transition-colors duration-300`}>
           {title}
         </h3>
         {subtitle && (
           <p className="text-sm font-body font-medium text-teal mb-3">{subtitle}</p>
         )}
-        <p className="text-card-foreground/70 font-body text-sm leading-relaxed mb-5">
+        <p className={`text-card-foreground/70 font-body ${isMain ? 'text-base' : 'text-sm'} leading-relaxed ${isMain ? 'mb-4 max-w-2xl' : 'mb-5'}`}>
           {description}
         </p>
         {position && (
@@ -205,16 +205,26 @@ const VentureCard = ({
             {position}
           </p>
         )}
-        <p className="text-xs font-body font-medium text-card-foreground/50 tracking-wide mb-5 italic">
+        <p className={`text-xs font-body font-medium text-card-foreground/50 tracking-wide ${isMain ? 'mb-0' : 'mb-5'} italic`}>
           {tagline}
         </p>
+
+        {/* CTA - inline for main card */}
+        {isMain && (
+          <div className="flex items-center gap-1.5 text-sm font-medium text-teal group-hover:text-teal-glow transition-colors duration-200 mt-4">
+            <span>Learn More</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+          </div>
+        )}
       </div>
 
-      {/* CTA */}
-      <div className="flex items-center gap-1.5 text-sm font-medium text-teal group-hover:text-teal-glow transition-colors duration-200">
-        <span>Learn More</span>
-        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-      </div>
+      {/* CTA - bottom for normal cards */}
+      {!isMain && (
+        <div className="flex items-center gap-1.5 text-sm font-medium text-teal group-hover:text-teal-glow transition-colors duration-200">
+          <span>Learn More</span>
+          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+        </div>
+      )}
 
       {/* Bottom glow */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-teal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
