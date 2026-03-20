@@ -92,7 +92,6 @@ const founderVentures = [
       "A platform for founders to incubate, launch, and scale startups with mentorship, shared infrastructure, and resources — powered by the Keehoo technology ecosystem.",
     tagline: "From Idea to Impact.",
     position: "Founder Enablement",
-    href: undefined,
     delay: 350,
     launchDate: new Date("2026-04-19T00:00:00"),
   },
@@ -183,7 +182,7 @@ const HeroSection = () => {
               Our Foundation
             </p>
             <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-600 text-foreground mb-4">
-              4+ Years of Building Industry-Leading Products
+              5+ Years of Building Industry-Leading Products
             </h2>
             <p className="text-base lg:text-lg font-body text-muted-foreground max-w-2xl mx-auto">
               A strong product building team with a factory model — delivering products 
@@ -211,7 +210,7 @@ const HeroSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
             {[
               { value: "5+", label: "Years of Journey" },
-              { value: "5", label: "Product Ventures" },
+              { value: "6", label: "Product Ventures" },
               { value: "50+", label: "Technology Experts" },
               { value: "3", label: "Industry Verticals" },
             ].map((stat) => (
