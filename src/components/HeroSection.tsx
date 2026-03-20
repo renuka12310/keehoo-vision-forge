@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import VentureCard from "@/components/VentureCard";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import {
   Building2,
   Landmark,
@@ -141,36 +143,76 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Keehoo Main Card */}
-        <div className="max-w-6xl mx-auto mb-10">
-          <VentureCard {...mainVenture} />
-        </div>
-
-        {/* Categorised Venture Cards */}
+        {/* Keehoo Group + Venture Ecosystem */}
         <div className="max-w-6xl mx-auto">
-          <CategorySection label="Community Solutions">
-            {communityVentures.map((venture) => (
-              <div key={venture.title} className="h-full">
-                <VentureCard {...venture} />
-              </div>
-            ))}
-          </CategorySection>
+          {/* Parent Group Banner */}
+          <Link
+            to="/keehoo"
+            className="group block relative rounded-t-xl border border-border/60 bg-card p-8 lg:p-10 opacity-0 animate-fade-in-up overflow-hidden"
+            style={{ animationDelay: "200ms", animationFillMode: "forwards" }}
+          >
+            {/* Top accent */}
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-teal via-teal/60 to-saffron/40 rounded-t-xl" />
 
-          <CategorySection label="Enterprise Solutions">
-            {enterpriseVentures.map((venture) => (
-              <div key={venture.title} className="h-full">
-                <VentureCard {...venture} />
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-teal/10 text-teal group-hover:bg-teal/20 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
+                <Building2 className="w-7 h-7" />
               </div>
-            ))}
-          </CategorySection>
+              <div className="flex-1">
+                <h2 className="font-display text-2xl lg:text-3xl font-semibold text-foreground group-hover:text-teal transition-colors duration-300 mb-1">
+                  Keehoo Technology Group
+                </h2>
+                <p className="font-body text-sm lg:text-base text-muted-foreground leading-relaxed max-w-2xl mb-2">
+                  A long-term technology holding company building mission-driven product ventures designed for scale, governance, and generational value creation.
+                </p>
+                <p className="text-xs font-body font-medium text-muted-foreground/60 tracking-wide italic">
+                  Strategic. Structured. Scalable.
+                </p>
+              </div>
+              <div className="flex items-center gap-1.5 text-sm font-medium text-teal group-hover:text-teal-glow transition-colors duration-200 flex-shrink-0">
+                <span>Explore</span>
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+              </div>
+            </div>
+          </Link>
 
-          <CategorySection label="Founder Solutions">
-            {founderVentures.map((venture) => (
-              <div key={venture.title} className="h-full">
-                <VentureCard {...venture} />
-              </div>
-            ))}
-          </CategorySection>
+          {/* Venture cards container — visually nested under the parent */}
+          <div
+            className="relative border-x border-b border-border/40 rounded-b-xl bg-muted/20 p-6 lg:p-8 opacity-0 animate-fade-in-up"
+            style={{ animationDelay: "350ms", animationFillMode: "forwards" }}
+          >
+            {/* Connector line from parent */}
+            <div className="absolute -top-px left-10 w-px h-4 bg-teal/30" />
+            <div className="absolute -top-px right-10 w-px h-4 bg-teal/30" />
+
+            <p className="text-[11px] font-body font-bold uppercase tracking-[0.3em] text-muted-foreground/50 mb-6 pl-1">
+              Product Ventures
+            </p>
+
+            <CategorySection label="Community Solutions">
+              {communityVentures.map((venture) => (
+                <div key={venture.title} className="h-full">
+                  <VentureCard {...venture} />
+                </div>
+              ))}
+            </CategorySection>
+
+            <CategorySection label="Enterprise Solutions">
+              {enterpriseVentures.map((venture) => (
+                <div key={venture.title} className="h-full">
+                  <VentureCard {...venture} />
+                </div>
+              ))}
+            </CategorySection>
+
+            <CategorySection label="Founder Solutions">
+              {founderVentures.map((venture) => (
+                <div key={venture.title} className="h-full">
+                  <VentureCard {...venture} />
+                </div>
+              ))}
+            </CategorySection>
+          </div>
         </div>
 
         {/* Facility & Team Section */}
