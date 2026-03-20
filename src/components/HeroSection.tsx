@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import VentureCard from "@/components/VentureCard";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import {
   Building2,
   Landmark,
