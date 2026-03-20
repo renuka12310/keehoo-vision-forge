@@ -148,14 +148,14 @@ const HeroSection = () => {
           {/* Parent Group Banner */}
           <Link
             to="/keehoo"
-            className="group block relative rounded-t-xl border border-border/60 bg-card p-8 lg:p-10 opacity-0 animate-fade-in-up overflow-hidden"
+            className="group block relative rounded-t-xl border border-teal/20 bg-teal/[0.06] p-8 lg:p-10 opacity-0 animate-fade-in-up overflow-hidden"
             style={{ animationDelay: "200ms", animationFillMode: "forwards" }}
           >
             {/* Top accent */}
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-teal via-teal/60 to-saffron/40 rounded-t-xl" />
 
             <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-teal/10 text-teal group-hover:bg-teal/20 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-teal/15 text-teal group-hover:bg-teal/25 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
                 <Building2 className="w-7 h-7" />
               </div>
               <div className="flex-1">
