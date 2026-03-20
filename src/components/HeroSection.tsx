@@ -6,6 +6,7 @@ import {
   BrainCircuit,
   ScanLine,
   HeartPulse,
+  Rocket,
 } from "lucide-react";
 import office1 from "@/assets/office-1.jpeg";
 import office2 from "@/assets/office-2.jpeg";
@@ -16,17 +17,18 @@ import founderSapna from "@/assets/founder-sapna.jpeg";
 import founderSreevatsa from "@/assets/founder-sreevatsa.png";
 import founderGopal from "@/assets/founder-gopal.png";
 
-const ventures = [
-  {
-    icon: <Building2 className="w-6 h-6" />,
-    title: "Keehoo Technology Group",
-    description:
-      "A long-term technology holding company building mission-driven product ventures designed for scale, governance, and generational value creation.",
-    tagline: "Strategic. Structured. Scalable.",
-    isMain: true,
-    delay: 200,
-    href: "/keehoo",
-  },
+const mainVenture = {
+  icon: <Building2 className="w-6 h-6" />,
+  title: "Keehoo Technology Group",
+  description:
+    "A long-term technology holding company building mission-driven product ventures designed for scale, governance, and generational value creation.",
+  tagline: "Strategic. Structured. Scalable.",
+  isMain: true,
+  delay: 200,
+  href: "/keehoo",
+};
+
+const communityVentures = [
   {
     icon: <Landmark className="w-6 h-6" />,
     title: "DigiDevalaya",
@@ -41,6 +43,21 @@ const ventures = [
     timerPosition: "top-right" as const,
   },
   {
+    icon: <HeartPulse className="w-6 h-6" />,
+    title: "DigiCounselar",
+    subtitle: "Digital Psychological Care Platform",
+    description:
+      "A HealthTech platform focused on accessible psychological support, structured healing journeys, and technology-enabled counseling infrastructure.",
+    tagline: "Digital Psychology for Modern Well-being.",
+    position: "HealthTech",
+    href: "/digicounselar",
+    delay: 500,
+    launchDate: new Date("2026-05-19T00:00:00"),
+  },
+];
+
+const enterpriseVentures = [
+  {
     icon: <BrainCircuit className="w-6 h-6" />,
     title: "AI Kruise",
     subtitle: "AI Planner for Leaders",
@@ -49,7 +66,7 @@ const ventures = [
     tagline: "Enterprise AI for Human Leadership.",
     position: "Productivity Intelligence",
     href: "/ai-kruise",
-    delay: 500,
+    delay: 350,
     launchDate: new Date("2026-04-19T00:00:00"),
   },
   {
@@ -61,22 +78,33 @@ const ventures = [
     tagline: "Edge AI for Enterprise Efficiency.",
     position: "Enterprise Asset Intelligence",
     href: "/stock-asset",
-    delay: 650,
+    delay: 500,
     launchDate: new Date("2026-04-19T00:00:00"),
   },
+];
+
+const founderVentures = [
   {
-    icon: <HeartPulse className="w-6 h-6" />,
-    title: "DigiCounselar",
-    subtitle: "Digital Psychological Care Platform",
+    icon: <Rocket className="w-6 h-6" />,
+    title: "DigiIncubator",
+    subtitle: "Startup Incubation Platform",
     description:
-      "A HealthTech platform focused on accessible psychological support, structured healing journeys, and technology-enabled counseling infrastructure.",
-    tagline: "Digital Psychology for Modern Well-being.",
-    position: "HealthTech",
-    href: "/digicounselar",
-    delay: 800,
-    launchDate: new Date("2026-05-19T00:00:00"),
+      "A platform for founders to incubate, launch, and scale startups with mentorship, shared infrastructure, and resources — powered by the Keehoo technology ecosystem.",
+    tagline: "From Idea to Impact.",
+    position: "Founder Enablement",
+    delay: 350,
+    launchDate: new Date("2026-04-19T00:00:00"),
   },
 ];
+
+const CategorySection = ({ label, children }: { label: string; children: React.ReactNode }) => (
+  <div className="mb-10">
+    <p className="text-xs font-body font-bold uppercase tracking-[0.25em] text-teal/70 mb-5 pl-1">{label}</p>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {children}
+    </div>
+  </div>
+);
 
 const HeroSection = () => {
   return (
@@ -113,13 +141,38 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Venture Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {ventures.map((venture, index) => (
-            <div key={venture.title} className={`h-full ${index === 3 ? "lg:col-start-2" : ""}`}>
-              <VentureCard {...venture} />
-            </div>
-          ))}
+        {/* Keehoo Main Card */}
+        <div className="max-w-6xl mx-auto mb-10">
+          <div className="max-w-md">
+            <VentureCard {...mainVenture} />
+          </div>
+        </div>
+
+        {/* Categorised Venture Cards */}
+        <div className="max-w-6xl mx-auto">
+          <CategorySection label="Community Solutions">
+            {communityVentures.map((venture) => (
+              <div key={venture.title} className="h-full">
+                <VentureCard {...venture} />
+              </div>
+            ))}
+          </CategorySection>
+
+          <CategorySection label="Enterprise Solutions">
+            {enterpriseVentures.map((venture) => (
+              <div key={venture.title} className="h-full">
+                <VentureCard {...venture} />
+              </div>
+            ))}
+          </CategorySection>
+
+          <CategorySection label="Founder Solutions">
+            {founderVentures.map((venture) => (
+              <div key={venture.title} className="h-full">
+                <VentureCard {...venture} />
+              </div>
+            ))}
+          </CategorySection>
         </div>
 
         {/* Facility & Team Section */}
@@ -129,7 +182,7 @@ const HeroSection = () => {
               Our Foundation
             </p>
             <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-600 text-foreground mb-4">
-              4+ Years of Building Industry-Leading Products
+              5+ Years of Building Industry-Leading Products
             </h2>
             <p className="text-base lg:text-lg font-body text-muted-foreground max-w-2xl mx-auto">
               A strong product building team with a factory model — delivering products 
@@ -157,7 +210,7 @@ const HeroSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
             {[
               { value: "5+", label: "Years of Journey" },
-              { value: "5", label: "Product Ventures" },
+              { value: "6", label: "Product Ventures" },
               { value: "50+", label: "Technology Experts" },
               { value: "3", label: "Industry Verticals" },
             ].map((stat) => (
