@@ -98,6 +98,84 @@ const founderVentures = [
   },
 ];
 
+const CategorySection = ({ label, children }: { label: string; children: React.ReactNode }) => (
+  <div className="mb-10">
+    <p className="text-xs font-body font-bold uppercase tracking-[0.25em] text-teal/70 mb-5 pl-1">{label}</p>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {children}
+    </div>
+  </div>
+);
+
+const HeroSection = () => {
+  return (
+    <section className="relative min-h-screen bg-background overflow-hidden">
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      <div className="relative container mx-auto px-6 pt-24 pb-20 lg:pt-32 lg:pb-28">
+        {/* Header */}
+        <div className="max-w-4xl mx-auto text-center mb-20 opacity-0 animate-fade-in-up">
+          <p className="text-sm font-body font-semibold uppercase tracking-[0.2em] text-teal mb-6">
+            Keehoo Pvt Ltd
+          </p>
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-[3.4rem] font-600 leading-tight text-foreground mb-8">
+            Powering the Future of Enterprise, Faith &amp; Human Well-being
+            Through Technology.
+          </h1>
+          <p className="text-base lg:text-lg font-body text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-10">
+            Keehoo Pvt Ltd is a technology group building scalable product
+            ventures across FaithTech, Enterprise Automation and Intelligence,
+            and Digital Psychology.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="hero" size="lg" className="text-base px-8 py-6">
+              Explore Our Ventures
+            </Button>
+          </div>
+        </div>
+
+        {/* Keehoo Main Card */}
+        <div className="max-w-6xl mx-auto mb-10">
+          <div className="max-w-md">
+            <VentureCard {...mainVenture} />
+          </div>
+        </div>
+
+        {/* Categorised Venture Cards */}
+        <div className="max-w-6xl mx-auto">
+          <CategorySection label="Community Solutions">
+            {communityVentures.map((venture) => (
+              <div key={venture.title} className="h-full">
+                <VentureCard {...venture} />
+              </div>
+            ))}
+          </CategorySection>
+
+          <CategorySection label="Enterprise Solutions">
+            {enterpriseVentures.map((venture) => (
+              <div key={venture.title} className="h-full">
+                <VentureCard {...venture} />
+              </div>
+            ))}
+          </CategorySection>
+
+          <CategorySection label="Founder Solutions">
+            {founderVentures.map((venture) => (
+              <div key={venture.title} className="h-full">
+                <VentureCard {...venture} />
+              </div>
+            ))}
+          </CategorySection>
+        </div>
+
         {/* Facility & Team Section */}
         <div className="max-w-6xl mx-auto mt-24 opacity-0 animate-fade-in-up" style={{ animationDelay: '900ms' }}>
           <div className="text-center mb-12">
