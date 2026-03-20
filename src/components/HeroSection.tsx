@@ -17,17 +17,18 @@ import founderSapna from "@/assets/founder-sapna.jpeg";
 import founderSreevatsa from "@/assets/founder-sreevatsa.png";
 import founderGopal from "@/assets/founder-gopal.png";
 
-const ventures = [
-  {
-    icon: <Building2 className="w-6 h-6" />,
-    title: "Keehoo Technology Group",
-    description:
-      "A long-term technology holding company building mission-driven product ventures designed for scale, governance, and generational value creation.",
-    tagline: "Strategic. Structured. Scalable.",
-    isMain: true,
-    delay: 200,
-    href: "/keehoo",
-  },
+const mainVenture = {
+  icon: <Building2 className="w-6 h-6" />,
+  title: "Keehoo Technology Group",
+  description:
+    "A long-term technology holding company building mission-driven product ventures designed for scale, governance, and generational value creation.",
+  tagline: "Strategic. Structured. Scalable.",
+  isMain: true,
+  delay: 200,
+  href: "/keehoo",
+};
+
+const communityVentures = [
   {
     icon: <Landmark className="w-6 h-6" />,
     title: "DigiDevalaya",
@@ -42,6 +43,21 @@ const ventures = [
     timerPosition: "top-right" as const,
   },
   {
+    icon: <HeartPulse className="w-6 h-6" />,
+    title: "DigiCounselar",
+    subtitle: "Digital Psychological Care Platform",
+    description:
+      "A HealthTech platform focused on accessible psychological support, structured healing journeys, and technology-enabled counseling infrastructure.",
+    tagline: "Digital Psychology for Modern Well-being.",
+    position: "HealthTech",
+    href: "/digicounselar",
+    delay: 500,
+    launchDate: new Date("2026-05-19T00:00:00"),
+  },
+];
+
+const enterpriseVentures = [
+  {
     icon: <BrainCircuit className="w-6 h-6" />,
     title: "AI Kruise",
     subtitle: "AI Planner for Leaders",
@@ -50,7 +66,7 @@ const ventures = [
     tagline: "Enterprise AI for Human Leadership.",
     position: "Productivity Intelligence",
     href: "/ai-kruise",
-    delay: 500,
+    delay: 350,
     launchDate: new Date("2026-04-19T00:00:00"),
   },
   {
@@ -62,66 +78,25 @@ const ventures = [
     tagline: "Edge AI for Enterprise Efficiency.",
     position: "Enterprise Asset Intelligence",
     href: "/stock-asset",
-    delay: 650,
+    delay: 500,
     launchDate: new Date("2026-04-19T00:00:00"),
-  },
-  {
-    icon: <HeartPulse className="w-6 h-6" />,
-    title: "DigiCounselar",
-    subtitle: "Digital Psychological Care Platform",
-    description:
-      "A HealthTech platform focused on accessible psychological support, structured healing journeys, and technology-enabled counseling infrastructure.",
-    tagline: "Digital Psychology for Modern Well-being.",
-    position: "HealthTech",
-    href: "/digicounselar",
-    delay: 800,
-    launchDate: new Date("2026-05-19T00:00:00"),
   },
 ];
 
-const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen bg-background overflow-hidden">
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      <div className="relative container mx-auto px-6 pt-24 pb-20 lg:pt-32 lg:pb-28">
-        {/* Header */}
-        <div className="max-w-4xl mx-auto text-center mb-20 opacity-0 animate-fade-in-up">
-          <p className="text-sm font-body font-semibold uppercase tracking-[0.2em] text-teal mb-6">
-            Keehoo Pvt Ltd
-          </p>
-          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-[3.4rem] font-600 leading-tight text-foreground mb-8">
-            Powering the Future of Enterprise, Faith &amp; Human Well-being
-            Through Technology.
-          </h1>
-          <p className="text-base lg:text-lg font-body text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-10">
-            Keehoo Pvt Ltd is a technology group building scalable product
-            ventures across FaithTech, Enterprise Automation and Intelligence,
-            and Digital Psychology.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="text-base px-8 py-6">
-              Explore Our Ventures
-            </Button>
-          </div>
-        </div>
-
-        {/* Venture Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {ventures.map((venture, index) => (
-            <div key={venture.title} className={`h-full ${index === 3 ? "lg:col-start-2" : ""}`}>
-              <VentureCard {...venture} />
-            </div>
-          ))}
-        </div>
+const founderVentures = [
+  {
+    icon: <Rocket className="w-6 h-6" />,
+    title: "DigiIncubator",
+    subtitle: "Startup Incubation Platform",
+    description:
+      "A platform for founders to incubate, launch, and scale startups with mentorship, shared infrastructure, and resources — powered by the Keehoo technology ecosystem.",
+    tagline: "From Idea to Impact.",
+    position: "Founder Enablement",
+    href: undefined,
+    delay: 350,
+    launchDate: new Date("2026-04-19T00:00:00"),
+  },
+];
 
         {/* Facility & Team Section */}
         <div className="max-w-6xl mx-auto mt-24 opacity-0 animate-fade-in-up" style={{ animationDelay: '900ms' }}>
