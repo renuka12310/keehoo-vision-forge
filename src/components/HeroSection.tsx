@@ -6,6 +6,7 @@ import {
   BrainCircuit,
   ScanLine,
   HeartPulse,
+  Rocket,
 } from "lucide-react";
 import office1 from "@/assets/office-1.jpeg";
 import office2 from "@/assets/office-2.jpeg";
